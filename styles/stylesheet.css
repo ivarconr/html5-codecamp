@@ -74,3 +74,9 @@ span.small {
     font-size: 0.7em;
     font-style: italic;
 }
+
+canvas#logo {
+    float: right;
+    background-color: #333;
+    padding: 1em;
+}
