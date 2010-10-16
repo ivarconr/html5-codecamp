@@ -8,6 +8,13 @@ $(function() {
         return false;
     });
 
+    $('.deletePostLink').click(function() {
+        console.log("Remove");
+        $(this).parent().parent().fadeOut(200);
+        var postId = $(this).attr('id');
+        console.log(postId);
+        // removepost
+    })
 
     // Replace the <textarea id="editor"> with an CKEditor
     // instance, using default configurations.
