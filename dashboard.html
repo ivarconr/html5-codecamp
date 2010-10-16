@@ -11,17 +11,17 @@
 <body>
 
     <header id="pageHead">
-        <h1>FancyBlawg</h1>
-    </header>
-    <div id="mainWrap"> 
-    <div id="contentArea">
-        <div id="adminAddPost">
-            <section>
-                <a href="#" id="addBlogPostLink">Add blog post</a>
+    <h1>FancyBlawg</h1>
+</header>
+<div id="contentArea">
+    <div id="adminAddPost">
+        <section>
+            <a href="#" id="addBlogPostLink">Add blog post</a>
 
-                <form id="addPost" method="POST">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" id="title" required>
+
+            <form id="addPost" method="POST">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" required>
 
                 <label for="content">Content </label>
                 <textarea name="content" id="content"></textarea>
@@ -29,15 +29,15 @@
                 <label form="date">Publish date</label>
                 <input type="datetime" name="date" id="date">
 
-                    <label for="tags">Tags</label>
-                    <input type="text" name="tags" id="tags" required pattern="[\w]*">
+                <label for="tags">Tags</label>
+                <input type="text" name="tags" id="tags" required pattern="[\w]*">
 
-                    <label for="tags">Image</label>
-                    <input type="file" name="image" id="image">
+                <label for="tags">Image</label>
+                <input type="file" name="image" id="image">
 
-                    <input type="submit">
-                </form>
-            </section>
+                <input type="submit">
+            </form>
+        </section>
         </div>
         <article>
             <div class="adminBar">
@@ -54,10 +54,54 @@
                 into
                 electronic typesetting, remaining essentially unchanged.</p>
         </article>
+>>>>>>> 12fa33ba9dd246002d2621aff21083de240020f9
     </div>
+    <article>
+        <header>
+            <h2>Blog post title</h2>
+            Published
+            <time datetime="2010-10-16">today</time> (<a href="#">4 comments</a>)
+        </header>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged.</p>
+
+        <span class="adminBar">
+            <a href="#">Edit</a> - <a href="#">Delete</a>
+        </span>
+
+        <div class="clear"></div>
+
+        <form class="addComment" method="post">
+            <label for="email">E-mail</label><input id="email" type="email" name="email">
+            <input type="submit">
+        </form>
+    </article>
+
+    <div id="two-columns">
+        <div id="column1">
+
+            <h2>Recent Posts</h2>
+            <ul>
+                <li><a href="#">Urnanet non molestie semper</a> October 1, 2010</li>
+                <li><a href="#">Suspendisse iaculis mauris</a> September 30, 2010</li>
+            </ul>
+        </div>
+
+        <div id="column2">
+            <h2>About Us</h2>
+            <p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer.</p>
+            <p><a href="#">Read More...</a></p>
+        </div>
+    </div>
+
 </div>
-    <footer>
-        &copy; none. It's free as in beer.
-    </footer>
+
+<div class="clear"></div>
+</div>
+<footer>
+    &copy; none. It's free as in beer.
+</footer>
 </body>
 </html>
