@@ -58,9 +58,12 @@
             <div class="column">
 
                 <h2>Recent Posts</h2>
-                <ul>
-                    <li><a href="#">Urnanet non molestie semper</a> October 1, 2010</li>
-                    <li><a href="#">Suspendisse iaculis mauris</a> September 30, 2010</li>
+                <ul id="recentPosts">
+                    <script>
+                        $(function() {
+                        html5team4.webdb.getlastBlogPosts(5);
+                    });
+                    </script>
                 </ul>
             </div>
 
@@ -79,8 +82,6 @@
 <footer>
     &copy; none. It's free as in beer.
 </footer>
-</div>
 
-<script src="scripts/slideshow.js"></script>
 </body>
 </html>

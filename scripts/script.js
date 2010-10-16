@@ -81,6 +81,14 @@ html5team4.webdb.getAllBlogPosts = function(renderFunc) {
                 html5team4.webdb.onError);
     });
 }
+
+html5team4.webdb.getlastBlogPosts = function(num) {
+    html5team4.webdb.db.transaction(function(tx) {
+        tx.executeSql('SELECT * FROM blogpost order by id desc limit 5', [], renderLastPosts,
+                html5team4.webdb.onError);
+    });
+}
+
 //Insert
 html5team4.webdb.addBlogpost = function(blogpost) {
     html5team4.webdb.db.transaction(function(tx) {
@@ -120,8 +128,18 @@ function loadBlogPosts(tx, rs) {
     
 }
 
+// Render last X blog posts
+function renderLastPosts(tx, rs) {
+    console.log("renderlast");
+    var recentPostsUl = $('ul#recentPosts');
+    for (var i = 0; i < rs.rows.length; i++) {
+        var li = $('<li>');
+        li.html(rs.rows.item(i).title);
+        recentPostsUl.append(li);
+    }
+}
+
 function renderBlog(blog) {
-    console.debug(blog.ID + "" + blog.title + "" + blog.content);
 
     var article = $('<article>');
     var div = $('<div>').attr('class', 'adminBar');
