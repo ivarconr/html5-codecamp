@@ -8,6 +8,14 @@ $(function() {
         return false;
     });
 
+    $('.deletePostLink').click(function() {
+        console.log("Remove");
+        $(this).parent().parent().fadeOut(200);
+        var postId = $(this).attr('id');
+        console.log(postId);
+        // removepost
+    })
+
     //Step 1
     var html5rocks = {};
     html5rocks.webdb = {};
