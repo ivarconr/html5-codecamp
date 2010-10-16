@@ -133,7 +133,13 @@ function renderBlog(blog) {
     header.append($('Published<time datetime="'+blog.added_on+'">'+blog.added_on+'</time>'));
     article.append(header).append($('<p>'+blog.content+'</p>'));
 
-    
+    var imageDiv = $('<div>');
+    article.append(imageDiv);
+    var firstIdx = 1 + Math.floor((Math.random() * 5));
+    var secondIdx = 1 + Math.floor((Math.random() * 5));
+    var thirdIdx = 1 + Math.floor((Math.random() * 5));
+    images.createSlideshow(imageDiv, ['img/photos/' + firstIdx + '.jpg', 'img/photos/' + secondIdx + '.jpg']); 
+
     return article;
    
 
