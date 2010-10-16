@@ -153,10 +153,10 @@ function renderBlog(blog) {
 
     var imageDiv = $('<div>');
     article.append(imageDiv);
-    var firstIdx = 1 + Math.floor((Math.random() * 5));
-    var secondIdx = 1 + Math.floor((Math.random() * 5));
-    var thirdIdx = 1 + Math.floor((Math.random() * 5));
-    images.createSlideshow(imageDiv, ['img/photos/' + firstIdx + '.jpg', 'img/photos/' + secondIdx + '.jpg']); 
+    var firstIdx = 1 + Math.floor((Math.random() * 10));
+    var secondIdx = 1 + Math.floor((Math.random() * 10));
+    var thirdIdx = 1 + Math.floor((Math.random() * 10));
+    images.createSlideshow(imageDiv, ['img/photos/' + firstIdx + '.jpg', 'img/photos/' + secondIdx + '.jpg', 'img/photos/' + thirdIdx + '.jpg']); 
 
     return article;
    
