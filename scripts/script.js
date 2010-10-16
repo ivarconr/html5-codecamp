@@ -3,8 +3,16 @@ $(function() {
         $('#addPost').slideToggle(150, null);
     });
 
-    $('#addPost').click(function() {
-        console.debug("form commit here");
+    $('form#addPost').submit(function() {
+        
+	var title = $('#addPost input[name=title]').val();
+	var content = CKEDITOR.instances.content.getData();
+	console.debug("form commit here %o", title);
+        
+	var blogpost = {title: title, content: content};
+        html5team4.webdb.addBlogpost(blogpost);
+
+	$('#addPost').slideToggle(150, null);
         return false;
     });
 
@@ -28,35 +36,37 @@ $(function() {
                     [ 'UIColor' ]
                 ]
     });
+
+    //Init DB stuff
+    init();
 });
 
 //DB stuff
 
 //Step 1
-var html5rocks = {};
-html5rocks.webdb = {};
+var html5team4 = {};
+html5team4.webdb = {};
 
 //Step 2
-html5rocks.webdb.db = null;
+html5team4.webdb.db = null;
 
-html5rocks.webdb.open = function() {
+html5team4.webdb.open = function() {
     var dbSize = 5 * 1024 * 1024; // 5MB
-    html5rocks.webdb.db = openDatabase('blogposts', '1.0', 'blogpost mangager', dbSize);
+    html5team4.webdb.db = openDatabase('blogposts', '1.0', 'blogpost mangager', dbSize);
 }
 
-html5rocks.webdb.onError = function(tx, e) {
+html5team4.webdb.onError = function(tx, e) {
     alert('Something unexpected happened: ' + e.message);
 }
 
-html5rocks.webdb.onSuccess = function(tx, r) {
-    //html5rocks.webdb.getBlogPosts(loadTodoItems);
-    //TODO: add all found elements
-    console.debug("success!!!")
+html5team4.webdb.onSuccess = function(tx, r) {
+    //html5team4.webdb.getBlogPosts(loadTodoItems);
+    html5team4.webdb.getAllBlogPosts(loadBlogPosts);
 }
 
 //Create Table
-html5rocks.webdb.createTable = function() {
-    html5rocks.webdb.db.transaction(function(tx) {
+html5team4.webdb.createTable = function() {
+    html5team4.webdb.db.transaction(function(tx) {
         tx.executeSql('CREATE TABLE IF NOT EXISTS ' +
                 'blogpost(ID INTEGER PRIMARY KEY ASC, title TEXT, content TEXT, added_on DATETIME)', []);
     });
@@ -64,48 +74,65 @@ html5rocks.webdb.createTable = function() {
 }
 
 //Select
-html5rocks.webdb.getAllBlogPosts = function(renderFunc) {
-    html5rocks.webdb.db.transaction(function(tx) {
-        tx.executeSql('SELECT * FROM blogpost', [], renderFunc,
-                html5rocks.webdb.onError);
+html5team4.webdb.getAllBlogPosts = function(renderFunc) {
+    html5team4.webdb.db.transaction(function(tx) {
+        tx.executeSql('SELECT * FROM blogpost order by id desc', [], renderFunc,
+                html5team4.webdb.onError);
     });
 }
 //Insert
-html5rocks.webdb.addBlogpost = function(blogpost) {
-    html5rocks.webdb.db.transaction(function(tx) {
+html5team4.webdb.addBlogpost = function(blogpost) {
+    html5team4.webdb.db.transaction(function(tx) {
         var addedOn = new Date();
         tx.executeSql('INSERT INTO blogpost(title,content, added_on) VALUES (?,?, ?)',
                 [blogpost.title, blogpost.content, addedOn],
-                html5rocks.webdb.onSuccess,
-                html5rocks.webdb.onError);
+                html5team4.webdb.onSuccess,
+                html5team4.webdb.onError);
     });
 }
 
 //Delete
-html5rocks.webdb.deleteBlogpost = function(id) {
-    html5rocks.webdb.db.transaction(function(tx) {
+html5team4.webdb.deleteBlogpost = function(id) {
+    html5team4.webdb.db.transaction(function(tx) {
         tx.executeSql('DELETE FROM blogpost WHERE ID=?', [id],
-                loadBlogPosts, html5rocks.webdb.onError);
+                loadBlogPosts, html5team4.webdb.onError);
     });
+}
+
+//Initializes database and render data
+function init() {
+    html5team4.webdb.open();
+    html5team4.webdb.createTable();
+    //html5team4.webdb.addBlogpost({title: "En tittle", content: "Innholdet"});
+    html5team4.webdb.getAllBlogPosts(loadBlogPosts);
 }
 
 //Render blogposts function
 function loadBlogPosts(tx, rs) {
     var rowOutput = "";
+    var article = $('#articleContainer');
+    article.empty();
+    
     for (var i = 0; i < rs.rows.length; i++) {
-        rowOutput += renderTodo(rs.rows.item(i));
+        article.append(renderBlog(rs.rows.item(i)));
     }
+    
 }
 
-function renderTodo(row) {
-    console.debug(row.ID + "" + row.title + "" + row.content);
-}
+function renderBlog(blog) {
+    console.debug(blog.ID + "" + blog.title + "" + blog.content);
 
+    var article = $('<article>');
+    var span = $('<p>').attr('class', 'adminBar');
+    article.append(span);
+    span.append($('<a>').attr('class', 'deletePostLink').attr('id', blog.ID));
+    var header = $('<header>');
+    header.append($('<h2>'+blog.title+'</h2>'));
+    header.append($('Published<time datetime="'+blog.added_on+'">'+blog.added_on+'</time>'));
+    article.append(header).append($('<p>'+blog.content+'</p>'));
 
-//Initializes database and render data
-function init() {
-    html5rocks.webdb.open();
-    html5rocks.webdb.createTable();
-    html5rocks.webdb.addBlogpost({title: "En tittle", content: "Innholdet"});
-    html5rocks.webdb.getAllBlogPosts(loadBlogPosts);
+    
+    return article;
+   
+
 }
