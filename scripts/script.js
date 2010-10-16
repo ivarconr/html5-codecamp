@@ -3,6 +3,7 @@ $(function() {
         $('#addPost').slideToggle(150, null);
     });
 
+
     $('form#addPost').submit(function() {
         
 	var title = $('#addPost input[name=title]').val();
@@ -15,14 +16,6 @@ $(function() {
 	$('#addPost').slideToggle(150, null);
         return false;
     });
-
-    $('.deletePostLink').click(function() {
-        console.log("Remove");
-        $(this).parent().parent().fadeOut(200);
-        var postId = $(this).attr('id');
-        console.log(postId);
-        // removepost
-    })
 
     // Replace the <textarea id="editor"> with an CKEditor
     // instance, using default configurations.
@@ -40,6 +33,14 @@ $(function() {
     //Init DB stuff
     init();
 });
+
+function addDeleteEventHandler() {
+        console.log("Remove");
+        $(this).parent().parent().fadeOut(200);
+        var postId = $(this).attr('id');
+        console.log(postId);
+        html5team4.webdb.deleteBlogpost(postId);
+    }
 
 //DB stuff
 
@@ -123,9 +124,10 @@ function renderBlog(blog) {
     console.debug(blog.ID + "" + blog.title + "" + blog.content);
 
     var article = $('<article>');
-    var span = $('<p>').attr('class', 'adminBar');
-    article.append(span);
-    span.append($('<a>').attr('class', 'deletePostLink').attr('id', blog.ID));
+    var div = $('<div>').attr('class', 'adminBar');
+    var a = $('<a>Delete</a>').attr('class', 'deletePostLink').attr('id', blog.ID).attr('href','#').click(addDeleteEventHandler);
+    div.append(a);
+    article.append(div);
     var header = $('<header>');
     header.append($('<h2>'+blog.title+'</h2>'));
     header.append($('Published<time datetime="'+blog.added_on+'">'+blog.added_on+'</time>'));
