@@ -1,28 +1,27 @@
 article, nav, header, section, footer { display: block; }
 div.clear { clear: both; }
 * { margin: 0; padding: 0; }
+body { background: #eeebec; margin: auto; font-family: arial, helvetica, sans-serif; }
 
 @font-face {
-	font-family: 'KingthingsVersalisRegular';
-	src: url('fonts/Kingthings_Versalis-webfont.eot');
-	src: local('?'), url('fonts/Kingthings_Versalis-webfont.woff') format('woff'), url('fonts/Kingthings_Versalis-webfont.ttf') format('truetype'), url('fonts/Kingthings_Versalis-webfont.svg#webfonthxvjSG7f') format('svg');
+	font-family: 'Harabara';
+	src: url('fonts/Harabara.ttf');
+	src: local('?'), url('fonts/Harabara.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
-header#pageHead { background: #333; }
+header#pageHead { background: #333; padding-top: 20px; }
 
 h1 {    
-    font-size: 2em;
+    font-size: 50px;
     color: #FFF;
     width: 800px;
-    background: #333;
     margin: auto;
-    padding: 10px 0; 
-    font: 40px 'KingthingsVersalisRegular', Arial, sans-serif;
+    padding: 10px 0;
+    text-shadow: #777 -2px -1px;
+    font-family: 'Harabara', "century gothic", Arial, sans-serif;
 }
-
-body { background: #eeebec; margin: auto; font-family: arial, helvetica, sans-serif; }
 
 div#mainWrap {
     padding: 0 20px 20px 20px;
@@ -37,7 +36,8 @@ footer { clear: both; }
 #addBlogPostLink { margin-bottom: 5px; display: block; text-align: center; color: #282; font-weight: bold; text-decoration: none; }
 #addPost { display: none; padding: 0 20px 20px 20px;  }
 #adminAddPost section { border: 1px solid #333; border-top: 0; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; padding-top: 10px; background: #DFD; }
-#adminAddPost section form label { display: block; font-weight: bold; } 
+#adminAddPost section form label { display: block; font-weight: bold; }
+input[type=submit] { display: block; padding: 5px 20px; margin: 10px 0 0 0 ; }
 
 article { margin: 15px 0; font-size: .85em; line-height: 1.6; }
 article h2 { color: #333; font-size: 25px;}
