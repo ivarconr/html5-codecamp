@@ -1,58 +1,54 @@
 article, nav, header, section, footer { display: block; }
+div.clear { clear: both; }
 * { margin: 0; padding: 0; }
+body { background: #eeebec; margin: auto; font-family: arial, helvetica, sans-serif; }
 
 @font-face {
-	font-family: 'KingthingsVersalisRegular';
-	src: url('fonts/Kingthings_Versalis-webfont.eot');
-	src: local('☺'), url('fonts/Kingthings_Versalis-webfont.woff') format('woff'), url('fonts/Kingthings_Versalis-webfont.ttf') format('truetype'), url('fonts/Kingthings_Versalis-webfont.svg#webfonthxvjSG7f') format('svg');
+	font-family: 'Harabara';
+	src: url('fonts/Harabara.ttf');
+	src: local('?'), url('fonts/Harabara.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
-h1 { 
-    font-size: 2em; 
-    border-bottom: 1px solid #333; 
-    color: #333; 
-    margin: 20px 0; 
-    font: 60px/68px 'KingthingsVersalisRegular', Arial, sans-serif;letter-spacing: 0;
+header#pageHead { background: #333; padding-top: 20px; }
+
+h1 {    
+    font-size: 50px;
+    color: #FFF;
+    width: 800px;
+    margin: auto;
+    padding: 10px 0;
+    text-shadow: #777 -2px -1px;
+    font-family: 'Harabara', "century gothic", Arial, sans-serif;
 }
 
-body { background: #eeebec; margin: auto; width: 990px; font-family: arial, helvetica, sans-serif; }
-
-
-div#wrap {
-    padding: 1em 1em 2em 1em;
+div#mainWrap {
+    padding: 0 20px 20px 20px;
     background: #fff;
-    margin-bottom: 1em;
+    margin: auto; 
     border: 0.01em solid #ccc;
+    width: 800px;
 }
 
 footer { clear: both; }
 
-#addBlogPostLink { margin: 20px; display: block; text-align: center; color: #282; font-weight: bold; text-decoration: none; }
-#addPost { display: none; }
-#adminAddPost section { border: 1px solid #333; border-radius: 20px; background: #DFD; }
-#adminAddPost section form { margin: 25px; }
-#adminAddPost section form label { display: block; font-weight: bold; } 
+#addBlogPostLink { margin-bottom: 5px; display: block; text-align: center; color: #282; font-weight: bold; text-decoration: none; }
+#addPost { display: none; padding: 0 20px 20px 20px;  }
+#adminAddPost section { border: 1px solid #333; border-top: 0; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; padding-top: 10px; background: #DFD; }
+#adminAddPost section form label { display: block; font-weight: bold; }
+input[type=submit] { display: block; padding: 5px 20px; margin: 10px 0 0 0 ; }
 
-.adminBar { 
-    float: right;
-    margin-bottom: 3em;
- }
+article { margin: 15px 0; font-size: .85em; line-height: 1.6; }
+article h2 { color: #333; font-size: 25px;}
+article .adminBar { font-size: .8em; text-align: right; position: relative; top: 20px; }
+article .adminBar .deletePostLink {color: red; }
+article header { border-top: 1px solid #CCC2A9; border-bottom: 1px solid #CCC2A9; }
 
-a {
-    text-decoration: none;
-    color: #AD1443;
-}
+.adminBar { float: right; }
 
-a:hover {
-    text-decoration: underline;
-}
-
-article {
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
+a { text-decoration: none; color: #AD1443; }
+a:hover { text-decoration: underline; }
 
 article header, article .adminBar, footer {
     margin: 0px;
@@ -60,45 +56,18 @@ article header, article .adminBar, footer {
     letter-spacing: -1px;
     padding: 5px 0px;
     text-align: left;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9em;
     font-style: italic;
 }
 
-article header {
-    border-top: 1px solid #CCC2A9;
-    border-bottom: 1px solid #CCC2A9;
-}
+footer { clear: both; background: #333; text-align: center; color: #FFF; padding: 20px 0; }
 
-
-footer {
-    padding-top: 4em; 
-    clear: both;
-    text-align: center;
-}
-
-#two-columns {
-    font-size: 0.9em;
-    margin: 0px auto;
-    padding: 30px 30px 20px 30px;
-}
-
-#two-columns h2 {
-    color: #3B3B3B;
-}
-
-#column1 {
+.column {
+    font-size: .9em;
+    line-height: 1.6;
+    color: #333;
     float: left;
     width: 50%;
-}
-
-#column2 {
-    float: right;
-    width: 50%;
-}
-
-div.clear {
-    clear: both;
 }
 
 span.small {
