@@ -103,6 +103,11 @@ images.createCanv = function(node) {
 
 // node is the dom node in which to insert the slideshow
 // images is an array of image urls
+// Example:
+// <script>
+// images.createSlideshow($('.images'), ['img/photos/1.jpg', 'img/photos/2.jpg']);
+// images.createSlideshow($('.images2'), ['img/photos/emma2.jpg', 'img/photos/3.jpg']);
+// </script>
 images.createSlideshow = function(node, images) {
 
     var liElemHtml = "";
