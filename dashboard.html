@@ -8,66 +8,61 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<header>
-    <h1>FancyBlawg</h1>
-</header>
-<nav>
-    <ul>
-        <li>Tag 1</li>
-        <li>Tag 2</li>
-        <li>Tag 3</li>
-        <li>Tag 4</li>
-    </ul>
-</nav>
-<div id="contentArea">
-    <div id="adminAddPost">
-        <section>
-            <a href="#" id="addBlogPostLink">Add blog post</a>
 
+    <header id="pageHead">
+        <h1>FancyBlawg</h1>
+    </header>
+    <div id="mainWrap"> 
+    <div id="contentArea">
+        <div id="adminAddPost">
+            <section>
+                <a href="#" id="addBlogPostLink">Add blog post</a>
 
-            <form id="addPost" method="POST">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title" required>
+                <form id="addPost" method="POST">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" required>
 
-                <label for="content">Content </label>
-                <textarea name="content" id="content"></textarea>
-                <label form="date">Publish date</label>
-                <input type="datetime" name="date" id="date">
+                    <label for="content">Content </label>
+                    <textarea name="content" id="content"></textarea>
+                    <label form="date">Publish date</label>
+                    <input type="datetime" name="date" id="date">
 
-                <label for="tags">Tags</label>
-                <input type="text" name="tags" id="tags" required pattern="[\w]*">
+                    <label for="tags">Tags</label>
+                    <input type="text" name="tags" id="tags" required pattern="[\w]*">
 
-                <label for="tags">Image</label>
-                <input type="file" name="image" id="image">
+                    <label for="tags">Image</label>
+                    <input type="file" name="image" id="image">
 
+                    <input type="submit">
+                </form>
+            </section>
+        </div>
+        <article>
+            <div class="adminBar">
+                <a href="#">Edit</a> - <a href="#">Delete</a>
+            </div>
+            <header>
+                <h2>Blog post title</h2>
+                Published
+                <time datetime="2010-10-16">today</time>
+            </header>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into
+                electronic typesetting, remaining essentially unchanged.</p>
+
+            <p>This post has <a href="#">4 comments</a></p>
+
+            <form class="addComment" method="post">
+                <label for="email">E-mail</label><input type="mail" name="email">
                 <input type="submit">
             </form>
-        </section>
+        </article>
     </div>
-    <article>
-        <div class="adminBar">
-            <a href="#">Edit</a> - <a href="#">Delete</a>
-        </div>
-        <header>
-            <h2>Blog post title</h2>
-            Published
-            <time datetime="2010-10-16">today</time>
-        </header>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-            electronic typesetting, remaining essentially unchanged.</p>
-
-        <p>This post has <a href="#">4 comments</a></p>
-
-        <form class="addComment" method="post">
-            <label for="email">E-mail</label><input type="mail" name="email">
-            <input type="submit">
-        </form>
-    </article>
 </div>
-<footer>
-    &copy; none. It's free as in beer.
-</footer>
+    <footer>
+        &copy; none. It's free as in beer.
+    </footer>
 </body>
 </html>
