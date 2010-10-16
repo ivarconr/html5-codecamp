@@ -5,6 +5,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/images.js"></script>
+    <script src="scripts/logo.js"></script>
     <script src="scripts/ckeditor/ckeditor.js"></script>
     <link href="styles/stylesheet.css" rel="stylesheet">
     <link href="styles/slideshow.css" rel="stylesheet">
@@ -12,6 +13,9 @@
 </head>
 <body>
 <header id="pageHead">
+    <canvas id="logo" width="200" height="200">
+      <!-- do not show icon if canvas is not supported by the browser -->
+    </canvas>
     <h1>FancyBlawg</h1>
 </header>
 <div id="mainWrap">
