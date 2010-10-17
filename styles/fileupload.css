@@ -1,0 +1,30 @@
+	#drop-area {
+		border: 2px dashed #ddd;
+		padding: 10px;
+		margin-bottom: 2em;
+		width:300px;
+	}
+	#file-list {
+		list-style: none;
+		margin-bottom: 3em;
+	}
+
+	#file-list li {
+		border-bottom: 1px solid #000;
+		margin-bottom: 0.5em;
+		padding-bottom: 0.5em;
+	}
+
+
+	#file-list li.no-items {
+		border-bottom: none;
+	}
+
+	#file-list div {
+		margin-bottom: 0.5em;
+	}
+	
+	.thumbnail{
+		width:100px;
+		height:100px;
+	}
