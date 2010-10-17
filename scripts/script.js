@@ -3,7 +3,6 @@ $(function() {
         $('#addPost').slideToggle(150, null);
     });
 
-
     $('form#addPost').submit(function() {
         
 	var title = $('#addPost input[name=title]').val();
@@ -34,13 +33,13 @@ $(function() {
     init();
 });
 
-function addDeleteEventHandler() {
+function addDeleteEventListener(event) {
         console.log("Remove");
-        $(this).parent().parent().fadeOut(200);
+        $(event.currentTarget).parent().parent().fadeOut(200);
         var postId = $(this).attr('id');
         console.log(postId);
         html5team4.webdb.deleteBlogpost(postId);
-    }
+}
 
 //DB stuff
 
@@ -96,7 +95,7 @@ html5team4.webdb.addBlogpost = function(blogpost) {
 html5team4.webdb.deleteBlogpost = function(id) {
     html5team4.webdb.db.transaction(function(tx) {
         tx.executeSql('DELETE FROM blogpost WHERE ID=?', [id],
-                loadBlogPosts, html5team4.webdb.onError);
+                null, html5team4.webdb.onError);
     });
 }
 
@@ -125,7 +124,7 @@ function renderBlog(blog) {
 
     var article = $('<article>');
     var div = $('<div>').attr('class', 'adminBar');
-    var a = $('<a>Delete</a>').attr('class', 'deletePostLink').attr('id', blog.ID).attr('href','#').click(addDeleteEventHandler);
+    var a = $('<a>Delete</a>').attr('class', 'deletePostLink').attr('id', blog.ID).attr('href','#').click(addDeleteEventListener);
     div.append(a);
     article.append(div);
     var header = $('<header>');
