@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>FancyBlawg - HTML5 demo built by Team 4 @ HTML5OSlo</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="scripts/script.js"></script>
-	<script src="scripts/fileupload.js"></script>
+    <script src="scripts/fileupload.js"></script>
     <script src="scripts/images.js"></script>
     <script src="scripts/logo.js"></script>
     <script src="scripts/ckeditor/ckeditor.js"></script>
     <link href="styles/stylesheet.css" rel="stylesheet">
-	<link href="styles/fileupload.css" rel="stylesheet">
+    <link href="styles/fileupload.css" rel="stylesheet">
     <link href="styles/slideshow.css" rel="stylesheet">
-    <meta charset="UTF-8">
 </head>
 <body>
 <header id="pageHead">
-    <canvas id="logo" width="200" height="150">
-      <!-- do not show icon if canvas is not supported by the browser -->
-    </canvas>
-    <h1>FancyBlawg</h1>
+    <div>
+        <canvas id="logo" width="200" height="150">
+            <!-- do not show icon if canvas is not supported by the browser -->
+        </canvas>
+        <h1>FancyBlawg</h1>
+        <div class="clear"></div>
+    </div>
 </header>
 <div id="mainWrap">
     <div id="contentArea">
@@ -33,19 +36,17 @@
                     <label for="content">Content </label>
                     <textarea name="content" id="content"></textarea>
 
-                    <label for="file-upload">Image</label>
-                   
-					<p>
-						<input id="files-upload" type="file" multiple>
-					</p>
-					<p id="drop-area">
-						or drag and drop files here
-					</p>
+                    <label for="files-upload">Image</label>
+                    <input id="files-upload" name="file-upload" type="file" multiple>
 
-					<h3>Uploaded files</h3>
-					<ul id="file-list">
-						<li class="no-items">(no files uploaded yet)</li>
-					</ul>
+                    <p id="drop-area">
+                        or drag and drop files here
+                    </p>
+
+                    <h3>Uploaded files</h3>
+                    <ul id="file-list">
+                        <li class="no-items">(no files uploaded yet)</li>
+                    </ul>
                     <input type="submit">
                 </form>
             </section>
@@ -75,15 +76,15 @@
 
                 <h2>Recent Posts</h2>
                 <ul id="recentPosts">
-                    <script>
+                    <script>    
                         $(function() {
-                        html5team4.webdb.getlastBlogPosts(5);
-                    });
+                            html5team4.webdb.getlastBlogPosts(5);
+                        });
                     </script>
                 </ul>
             </div>
 
-            <div class="column"> 
+            <div class="column">
                 <h2>About Us</h2>
 
                 <p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel,

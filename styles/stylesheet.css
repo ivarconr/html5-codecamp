@@ -13,17 +13,19 @@ body { background: #eeebec; margin: auto; font-family: arial, helvetica, sans-se
 
 header#pageHead {
   display: block; 
-  background: #333; 
-  float: left;
+  background: #333;
   width: 100%;
   padding-bottom: 20px;
-  padding-left: 420px; 
 }
 
-h1 {    
+header#pageHead div {
+    margin: 0 auto;
+    width: 800px;
+}
+h1 {
     font-size: 50px;
     color: #FFF;
-    padding: 60px 0;
+    margin-top: 60px;
     text-shadow: #777 -2px -1px;
     font-family: 'Harabara', "century gothic", Arial, sans-serif;
     width: 400px;
@@ -53,6 +55,8 @@ article .adminBar .deletePostLink {color: red; }
 article header { border-top: 1px solid #CCC2A9; border-bottom: 1px solid #CCC2A9; }
 article ol, article ul { margin: 1em 20px; }
 
+div#contentArea > header > h2 { padding-top: 1em; color: #333;}
+div#contentArea > p { line-height: 1.6; font-size: .85em; }
 .adminBar { float: right; }
 
 a { text-decoration: none; color: #AD1443; }
@@ -83,7 +87,6 @@ span.small {
     font-style: italic;
 }
 
-canvas#logo {
-    float: left;
-    background-color: #333;
-}
+canvas#logo {  float: left; background-color: #333; }
+
+video { width: 500px; margin: 1em auto; display: block;}
