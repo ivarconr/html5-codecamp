@@ -47,7 +47,7 @@
 	height:86px;
 	width:60px;
 	position:absolute;
-	background:url("/img/arrows.png") no-repeat;
+	background:url("../img/arrows.png") no-repeat;
 	top:50%;
 	margin-top:-43px;
 	cursor:pointer;

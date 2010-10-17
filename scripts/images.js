@@ -55,10 +55,8 @@ images.createCanv = function(node) {
     });
 
 
-    // This function takes an image and renders
-    // a version of it similar to the Overlay blending
-    // mode in Photoshop.
 
+    // Creates a blending effect
     function createCanvasOverlay(image){
 
         var canvas			= document.createElement('canvas'),
