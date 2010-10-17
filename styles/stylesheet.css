@@ -53,7 +53,7 @@ article h2 { color: #333; font-size: 25px;}
 article .adminBar { font-size: .8em; text-align: right; position: relative; top: 20px; }
 article .adminBar .deletePostLink {color: red; }
 article header { border-top: 1px solid #CCC2A9; border-bottom: 1px solid #CCC2A9; }
-article > ol, article > ul { margin: 1em 20px; }
+article > ol, article > ul, ul#recentPosts { margin: 1em 20px; }
 
 div#contentArea > header > h2 { padding-top: 1em; color: #333;}
 div#contentArea > p { line-height: 1.6; font-size: .85em; }
