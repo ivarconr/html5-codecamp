@@ -15,8 +15,7 @@ $(function() {
     
     	$('#addPost').slideToggle(150, null);
       
-      $('form#addPost').reset();
-      
+
       return false;
     });
 
