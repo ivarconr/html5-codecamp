@@ -11,16 +11,23 @@ body { background: #eeebec; margin: auto; font-family: arial, helvetica, sans-se
 	font-style: normal;
 }
 
-header#pageHead { background: #333; padding-top: 20px; }
+header#pageHead {
+  display: block; 
+  background: #333; 
+  float: left;
+  width: 100%;
+  padding-bottom: 20px;
+  padding-left: 420px; 
+}
 
 h1 {    
     font-size: 50px;
     color: #FFF;
-    width: 800px;
-    margin: auto;
-    padding: 10px 0;
+    padding: 60px 0;
     text-shadow: #777 -2px -1px;
     font-family: 'Harabara', "century gothic", Arial, sans-serif;
+    width: 400px;
+    float: left;
 }
 
 div#mainWrap {
@@ -76,7 +83,6 @@ span.small {
 }
 
 canvas#logo {
-    float: right;
+    float: left;
     background-color: #333;
-    padding: 1em;
 }
