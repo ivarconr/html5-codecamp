@@ -11,11 +11,11 @@ $(function() {
             
     	var blogpost = {title: title, content: content};
       html5team4.webdb.addBlogpost(blogpost);
+        publishBlogPost(blogpost);
     
     	$('#addPost').slideToggle(150, null);
       
-      $('form#addPost').reset();
-      
+
       return false;
     });
 
