@@ -6,15 +6,18 @@ $(function() {
 
     $('form#addPost').submit(function() {
         
-	var title = $('#addPost input[name=title]').val();
-	var content = CKEDITOR.instances.content.getData();
-	console.debug("form commit here %o", title);
-        
-	var blogpost = {title: title, content: content};
-        html5team4.webdb.addBlogpost(blogpost);
-
-	$('#addPost').slideToggle(150, null);
-        return false;
+    	var title = $('#addPost input[name=title]').val();
+    	var content = CKEDITOR.instances.content.getData();
+    	console.debug("form commit here %o", title);
+            
+    	var blogpost = {title: title, content: content};
+      html5team4.webdb.addBlogpost(blogpost);
+    
+    	$('#addPost').slideToggle(150, null);
+      
+      $('form#addPost').reset();
+      
+      return false;
     });
 
     // Replace the <textarea id="editor"> with an CKEditor
