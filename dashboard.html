@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test</title>
+    <title>FancyBlawg - HTML5 demo built by Team 4 @ HTML5OSlo</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/images.js"></script>
+    <script src="scripts/logo.js"></script>
     <script src="scripts/ckeditor/ckeditor.js"></script>
     <link href="styles/stylesheet.css" rel="stylesheet">
+    <link href="styles/slideshow.css" rel="stylesheet">
     <meta charset="UTF-8">
 </head>
 <body>
 <header id="pageHead">
+    <canvas id="logo" width="200" height="150">
+      <!-- do not show icon if canvas is not supported by the browser -->
+    </canvas>
     <h1>FancyBlawg</h1>
 </header>
 <div id="mainWrap">
@@ -56,9 +62,12 @@
             <div class="column">
 
                 <h2>Recent Posts</h2>
-                <ul>
-                    <li><a href="#">Urnanet non molestie semper</a> October 1, 2010</li>
-                    <li><a href="#">Suspendisse iaculis mauris</a> September 30, 2010</li>
+                <ul id="recentPosts">
+                    <script>
+                        $(function() {
+                        html5team4.webdb.getlastBlogPosts(5);
+                    });
+                    </script>
                 </ul>
             </div>
 
@@ -77,5 +86,6 @@
 <footer>
     &copy; none. It's free as in beer.
 </footer>
+
 </body>
 </html>
